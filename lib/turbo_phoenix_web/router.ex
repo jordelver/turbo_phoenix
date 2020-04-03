@@ -17,6 +17,8 @@ defmodule TurboPhoenixWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/foo", PageController, :foo
+    get "/bar", PageController, :bar
   end
 
   # Other scopes may use custom stacks.
