@@ -1,5 +1,8 @@
 /* This file is for your main application css. */
 
+@import "./keyframes.css";
+@import "./transitions.css";
+
 /* Hide the `<hr>` elements separating buttons from content */
 hr {
   background-color: transparent;

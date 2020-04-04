@@ -46,7 +46,7 @@
       </div>
     </nav>
 
-    <main role="main" class="section">
+    <main role="main" class="section m-scene">
 
       <%= unless is_nil(get_flash(@conn, :info)) do %>
         <div class="notification is-info" role="alert"><%= get_flash(@conn, :info) %></div>

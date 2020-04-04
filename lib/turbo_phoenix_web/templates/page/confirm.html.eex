@@ -1,6 +1,6 @@
 <progress class="progress is-primary" value="75" max="100">75%</progress>
 
-<div class="container">
+<div class="container scene_element scene_element--fadeinright">
 
   <h1 class="title is-4 has-text-centered has-text-primary">Is everything correct?</h1>
 
