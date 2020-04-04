@@ -17,4 +17,8 @@ import TurboLinks from "turbolinks"
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
 
+document.addEventListener("turbolinks:load", function() {
+  FontAwesome.dom.i2svg()
+})
+
 TurboLinks.start()

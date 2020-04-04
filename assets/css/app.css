@@ -3,6 +3,7 @@
 @import "./keyframes.css";
 @import "./transitions.css";
 @import "./turbolinks.css";
+@import "./fontawesome.css";
 
 /* Hide the `<hr>` elements separating buttons from content */
 hr {
