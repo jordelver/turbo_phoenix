@@ -7,6 +7,9 @@
 # General application configuration
 use Mix.Config
 
+config :turbo_phoenix,
+  ecto_repos: [TurboPhoenix.Repo]
+
 # Configures the endpoint
 config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
   url: [host: "localhost"],
