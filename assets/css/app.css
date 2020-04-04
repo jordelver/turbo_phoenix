@@ -1,1 +1,11 @@
 /* This file is for your main application css. */
+
+/* Hide the `<hr>` elements separating buttons from content */
+hr {
+  background-color: transparent;
+}
+
+/* Remove space between navbar and top of the content */
+main.section {
+  padding-top: 1rem;
+}

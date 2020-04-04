@@ -5,11 +5,19 @@ defmodule TurboPhoenixWeb.PageController do
     render(conn, "index.html")
   end
 
-  def foo(conn, _params) do
-    render(conn, "foo.html")
+  def name(conn, _params) do
+    render(conn, "name.html")
   end
 
-  def bar(conn, _params) do
-    render(conn, "bar.html")
+  def address(conn, _params) do
+    render(conn, "address.html")
+  end
+
+  def confirm(conn, _params) do
+    render(conn, "confirm.html")
+  end
+
+  def thanks(conn, _params) do
+    render(conn, "thanks.html")
   end
 end

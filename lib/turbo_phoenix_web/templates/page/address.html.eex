@@ -1,0 +1,79 @@
+<progress class="progress is-primary" value="50" max="100">50%</progress>
+
+<h1 class="title is-4 has-text-centered has-text-primary">Address</h1>
+
+<div class="container">
+  <div class="field">
+    <label class="label">Address 1</label>
+    <div class="control has-icons-left">
+      <input class="input is-medium" type="text" placeholder="Address 1">
+      <span class="icon is-small is-left">
+        <i class="fas fa-home"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Address 2</label>
+    <div class="control has-icons-left">
+      <input class="input is-medium" type="text" placeholder="Address 2">
+      <span class="icon is-small is-left">
+        <i class="fas fa-home"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Town</label>
+    <div class="control has-icons-left">
+      <input class="input is-medium" type="text" placeholder="Town">
+      <span class="icon is-small is-left">
+        <i class="fas fa-home"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Postcode</label>
+    <div class="control has-icons-left">
+      <input class="input is-medium" type="text" placeholder="Postcode">
+      <span class="icon is-small is-left">
+        <i class="fas fa-home"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Country</label>
+    <p class="control has-icons-left">
+      <span class="select is-medium is-fullwidth">
+        <select>
+          <option selected>Country</option>
+          <option>Select dropdown</option>
+          <option>With options</option>
+        </select>
+      </span>
+      <span class="icon is-small is-left">
+        <i class="fas fa-globe"></i>
+      </span>
+    </p>
+  </div>
+
+  <hr>
+
+  <div class="field">
+    <a href="/name" class="button is-medium is-outlined">
+      <span class="icon is-small">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+      <span>Back</span>
+    </a>
+
+    <a href="/confirm" class="button is-medium is-primary is-pulled-right">
+      <span>Next</span>
+      <span class="icon is-small">
+        <i class="fas fa-chevron-right"></i>
+      </span>
+    </a>
+  </div>
+</div>

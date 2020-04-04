@@ -1,0 +1,21 @@
+<progress class="progress is-primary" value="100" max="100">100%</progress>
+
+<div class="container">
+  <h1 class="title is-3 has-text-centered has-text-primary">Success!</h1>
+
+  <div class="columns is-mobile is-centered">
+    <div class="column is-three-quarters">
+      <img src="<%= Routes.static_path(@conn, "/images/success.svg") %>" alt="Thanks"/>
+    </div>
+  </div>
+
+  <article class="message is-primary">
+    <div class="message-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta
+        nec nulla.
+      </p>
+    </div>
+  </article>
+</div>

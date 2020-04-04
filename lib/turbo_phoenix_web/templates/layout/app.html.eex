@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Turbo signup</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -13,29 +13,24 @@
   </head>
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <h1 class="title size-2">
-          <a class="navbar-item" href="/">
-            Turbo Phoenix!
-          </a>
-        </h1>
+
+      <div class="navbar-brand is-vcentered">
+        <a class="navbar-item " href="/">
+          <span class="icon">
+            <i class="fas fa-bolt"></i>
+          </span>
+          <span class="title is-4">Turbo signup</span>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
 
       <div class="navbar-menu">
-        <div class="navbar-start">
-          <a href="/"  class="navbar-item">
-            Home
-          </a>
-
-          <a href="/foo" class="navbar-item">
-            Foo
-          </a>
-
-          <a href="/bar"  class="navbar-item">
-            Bar
-          </a>
-        </div>
-
+        <div class="navbar-start"></div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
@@ -51,10 +46,17 @@
       </div>
     </nav>
 
-    <section class="section">
-      <div class="container">
-        <%= render @view_module, @view_template, assigns %>
-      </div>
-    </section>
+    <main role="main" class="section">
+
+      <%= unless is_nil(get_flash(@conn, :info)) do %>
+        <div class="notification is-info" role="alert"><%= get_flash(@conn, :info) %></div>
+      <% end %>
+
+      <%= unless is_nil(get_flash(@conn, :error)) do %>
+        <div class="notification is-danger" role="alert"><%= get_flash(@conn, :error) %></div>
+      <% end %>
+
+      <%= render @view_module, @view_template, assigns %>
+    </main>
   </body>
 </html>
