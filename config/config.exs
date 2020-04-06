@@ -8,7 +8,8 @@
 use Mix.Config
 
 config :turbo_phoenix,
-  ecto_repos: [TurboPhoenix.Repo]
+  ecto_repos: [TurboPhoenix.Repo],
+  generators: [binary_id: true]
 
 # Configures the endpoint
 config :turbo_phoenix, TurboPhoenixWeb.Endpoint,

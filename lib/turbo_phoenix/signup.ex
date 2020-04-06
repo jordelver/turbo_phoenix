@@ -1,4 +1,6 @@
 defmodule TurboPhoenix.Signup do
+  alias TurboPhoenix.Repo
+  alias TurboPhoenix.Schema.{Address, User}
   alias TurboPhoenix.Schema.Signup, as: Schema
 
   def new_signup(params \\ %{}) do
@@ -28,13 +30,15 @@ defmodule TurboPhoenix.Signup do
   end
 
   def create_signup(params) do
-    # TODO Uses Ecto.Multi to create records within transaction
-    #
-    # Save records
-    # * Names to a users table
-    # * Addresses to an addresses table
-    #
-    params |> IO.inspect()
-    {:ok, nil}
+    Ecto.Multi.new()
+    |> Ecto.Multi.insert(:user, User.changeset(%User{}, params))
+
+    # We use `run/3` because we need access to the user
+    # created in the previous insert operation
+    |> Ecto.Multi.run(:address, fn _repo, %{user: user} ->
+      Address.changeset_with_user(%Address{}, user, params)
+      |> Repo.insert()
+    end)
+    |> Repo.transaction()
   end
 end
