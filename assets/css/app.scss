@@ -5,7 +5,13 @@
 @import "transitions";
 @import "turbolinks";
 @import "fontawesome";
+@import "variables";
 @import "bulma";
+
+::selection {
+  color: #fff;
+  background: $teal;
+}
 
 /* Hide the `<hr>` elements separating buttons from content */
 hr {
