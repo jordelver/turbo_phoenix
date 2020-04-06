@@ -10,8 +10,31 @@ defmodule TurboPhoenixWeb.ErrorHelpers do
   """
   def error_tag(form, field) do
     Enum.map(Keyword.get_values(form.errors, field), fn error ->
-      content_tag(:span, translate_error(error), class: "help-block")
+      content_tag(:span, translate_error(error), class: "help is-danger is-size-6")
     end)
+  end
+
+  @doc """
+  Output a CSS class for form inputs with errors.
+  """
+  def field_error(form, field) do
+    if Keyword.has_key?(form.errors, field) do
+      "is-danger"
+    end
+  end
+
+  @doc """
+  Generates an error icon tag for inlined form input errors.
+  """
+  def error_icon(form, field) do
+    if Keyword.has_key?(form.errors, field) do
+      """
+      <span class="icon is-small is-right">
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+      """
+      |> raw
+    end
   end
 
   @doc """

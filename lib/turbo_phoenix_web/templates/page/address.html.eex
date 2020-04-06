@@ -2,78 +2,89 @@
 
 <h1 class="title is-4 has-text-centered has-text-primary">Address</h1>
 
+<%= form_for @changeset, Routes.page_path(@conn, :validate, :address), [novalidate: :novalidate], fn f -> %>
+
 <div class="container scene_element scene_element--fadeinright">
+
   <div class="field">
-    <label class="label">Address 1</label>
-    <div class="control has-icons-left">
-      <input class="input is-medium" type="text" placeholder="Address 1">
+    <%= label f, :address1, "Address 1", class: "label" %>
+    <div class="control has-icons-left has-icons-right">
+      <%= text_input f, :address1, class: "input is-medium #{field_error(f, :address1)}", placeholder: "Address 1" %>
       <span class="icon is-small is-left">
         <i class="fas fa-home"></i>
       </span>
+      <%= error_icon f, :address1 %>
+      <%= error_tag f, :address1 %>
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Address 2</label>
-    <div class="control has-icons-left">
-      <input class="input is-medium" type="text" placeholder="Address 2">
+    <%= label f, :address2, "Address 2", class: "label" %>
+    <div class="control has-icons-left has-icons-right">
+      <%= text_input f, :address2, class: "input is-medium #{field_error(f, :address2)}", placeholder: "Address 2" %>
       <span class="icon is-small is-left">
         <i class="fas fa-home"></i>
       </span>
+      <%= error_icon f, :address2 %>
+      <%= error_tag f, :address2 %>
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Town</label>
-    <div class="control has-icons-left">
-      <input class="input is-medium" type="text" placeholder="Town">
+    <%= label f, :town, class: "label" %>
+    <div class="control has-icons-left has-icons-right">
+      <%= text_input f, :town, class: "input is-medium #{field_error(f, :town)}", placeholder: "Town" %>
       <span class="icon is-small is-left">
         <i class="fas fa-home"></i>
       </span>
+      <%= error_icon f, :town %>
+      <%= error_tag f, :town %>
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Postcode</label>
-    <div class="control has-icons-left">
-      <input class="input is-medium" type="text" placeholder="Postcode">
+    <%= label f, :postcode, class: "label" %>
+    <div class="control has-icons-left has-icons-right">
+      <%= text_input f, :postcode, class: "input is-medium #{field_error(f, :postcode)}", placeholder: "Postcode" %>
       <span class="icon is-small is-left">
-        <i class="fas fa-home"></i>
+        <i class="fas fa-envelope"></i>
       </span>
+      <%= error_icon f, :postcode %>
+      <%= error_tag f, :postcode %>
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Country</label>
-    <p class="control has-icons-left">
+    <%= label f, :country, class: "label" %>
+    <div class="control has-icons-left">
       <span class="select is-medium is-fullwidth">
-        <select>
-          <option selected>Country</option>
-          <option>Select dropdown</option>
-          <option>With options</option>
-        </select>
+        <%= select f, :country, ["United Kindom", "United States of America", "Anywhere else"] %>
       </span>
       <span class="icon is-small is-left">
         <i class="fas fa-globe"></i>
       </span>
-    </p>
+      <%= error_icon f, :country %>
+      <%= error_tag f, :country %>
+    </div>
   </div>
 
   <hr>
 
   <div class="field">
-    <a href="/name" class="button is-medium is-outlined">
-      <span class="icon is-small">
-        <i class="fas fa-chevron-left"></i>
-      </span>
-      <span>Back</span>
-    </a>
-
-    <a href="/confirm" class="button is-medium is-primary is-pulled-right">
+    <%= submit class: "button is-medium is-primary is-pulled-right" do %>
       <span>Next</span>
       <span class="icon is-small">
         <i class="fas fa-chevron-right"></i>
       </span>
-    </a>
+    <% end %>
+
+    <%= link class: "button is-medium is-outlined", to: Routes.page_path(@conn, :stage, :name) do %>
+      <span class="icon is-small">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+      <span>Back</span>
+    <% end %>
   </div>
 </div>
+
+<% end %>

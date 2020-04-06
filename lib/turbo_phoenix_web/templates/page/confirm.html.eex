@@ -1,5 +1,7 @@
 <progress class="progress is-primary" value="75" max="100">75%</progress>
 
+<%= form_for @changeset, Routes.page_path(@conn, :validate, :confirm), [novalidate: :novalidate], fn _f -> %>
+
 <div class="container scene_element scene_element--fadeinright">
 
   <h1 class="title is-4 has-text-centered has-text-primary">Is everything correct?</h1>
@@ -8,39 +10,39 @@
     <tbody>
       <tr>
         <th>First name</th>
-        <td>Jordan</td>
+        <td><%= @changeset.changes[:first_name] %></td>
       </tr>
       <tr>
         <th>Last name</th>
-        <td>Elver</td>
+        <td><%= @changeset.changes[:last_name] %></td>
       </tr>
       <tr>
         <th>Username</th>
-        <td>jordelver</td>
+        <td><%= @changeset.changes[:username] %></td>
       </tr>
       <tr>
         <th>Email</th>
-        <td>jordan@elver.me</td>
+        <td><%= @changeset.changes[:email] %></td>
       </tr>
       <tr>
         <th>Address 1</th>
-        <td>Flat 3</td>
+        <td><%= @changeset.changes[:address1] %></td>
       </tr>
       <tr>
         <th>Address 2</th>
-        <td>45 Princes Road</td>
+        <td><%= @changeset.changes[:address2] %></td>
       </tr>
       <tr>
         <th>Town</th>
-        <td>Clevedon</td>
+        <td><%= @changeset.changes[:town] %></td>
       </tr>
       <tr>
         <th>Postcode</th>
-        <td>BS21 7NQ</td>
+        <td><%= @changeset.changes[:postcode] %></td>
       </tr>
       <tr>
         <th>Country</th>
-        <td>United Kingdom</td>
+        <td><%= @changeset.changes[:country] %></td>
       </tr>
     </tbody>
   </table>
@@ -48,18 +50,20 @@
   <hr>
 
   <div class="field">
-    <a href="/address" class="button is-medium is-outlined">
-      <span class="icon is-small">
-        <i class="fas fa-chevron-left"></i>
-      </span>
-      <span>Back</span>
-    </a>
-
-    <a href="/thanks" class="button is-medium is-primary is-pulled-right">
+    <%= submit class: "button is-medium is-primary is-pulled-right" do %>
       <span>Signup</span>
       <span class="icon is-small">
         <i class="fas fa-check"></i>
       </span>
-    </a>
+    <% end %>
+
+    <%= link class: "button is-medium is-outlined", to: Routes.page_path(@conn, :stage, :address) do %>
+      <span class="icon is-small">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+      <span>Back</span>
+    <% end %>
   </div>
 </div>
+
+<% end %>
