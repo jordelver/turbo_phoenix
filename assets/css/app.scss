@@ -1,9 +1,11 @@
 /* This file is for your main application css. */
+@charset "utf-8";
 
-@import "./keyframes.css";
-@import "./transitions.css";
-@import "./turbolinks.css";
-@import "./fontawesome.css";
+@import "keyframes";
+@import "transitions";
+@import "turbolinks";
+@import "fontawesome";
+@import "bulma";
 
 /* Hide the `<hr>` elements separating buttons from content */
 hr {
