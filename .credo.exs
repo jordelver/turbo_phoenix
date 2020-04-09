@@ -31,7 +31,15 @@
           "apps/*/test/",
           "apps/*/web/"
         ],
-        excluded: [~r"/_build/", ~r"/deps/", ~r"/node_modules/"]
+        excluded: [
+          ~r"/_build/",
+          ~r"/deps/",
+          ~r"/node_modules/",
+
+          # Ignore Phoenix generated support files
+          # I'd like to go with the Phoenix standard on these
+          ~r"/test/support/(data|conn|channel)_case.ex"
+        ]
       },
       #
       # Load and configure plugins here:
