@@ -19,13 +19,13 @@ defmodule TurboPhoenix.Signup do
   #
   def validate_stage("name" = stage, params) do
     %Schema{}
-    |> Schema.name_changeset(params) # TODO See what this looks like using `apply`
+    |> Schema.name_changeset(params)
     |> Ecto.Changeset.apply_action(:update)
   end
 
   def validate_stage("address" = stage, params) do
     %Schema{}
-    |> Schema.address_changeset(params) # TODO See what this looks like using `apply`
+    |> Schema.address_changeset(params)
     |> Ecto.Changeset.apply_action(:update)
   end
 
