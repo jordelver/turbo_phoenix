@@ -12,6 +12,14 @@ import css from "../css/app.scss"
 import "phoenix_html"
 import TurboLinks from "turbolinks"
 
+// Setup Stimulus
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+const application = Application.start()
+const context = require.context("./controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))
+
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:

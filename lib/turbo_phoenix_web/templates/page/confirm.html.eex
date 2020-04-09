@@ -1,6 +1,6 @@
 <progress class="progress is-primary" value="75" max="100">75%</progress>
 
-<%= form_for @changeset, Routes.page_path(@conn, :validate, :confirm), [novalidate: :novalidate], fn _f -> %>
+<%= form_for @changeset, Routes.page_path(@conn, :validate, :confirm), [novalidate: :novalidate, "data-controller": :signup, "data-action": "submit->signup#submit"], fn _f -> %>
 
 <div class="container scene_element scene_element--fadeinright">
 

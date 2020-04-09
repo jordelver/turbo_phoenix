@@ -2,9 +2,11 @@
 
 <h1 class="title is-4 has-text-centered has-text-primary">Personal details</h1>
 
-<%= form_for @changeset, Routes.page_path(@conn, :validate, :name), [novalidate: :novalidate], fn f -> %>
+<%= form_for @changeset, Routes.page_path(@conn, :validate, :name), [novalidate: :novalidate, "data-controller": :signup, "data-action": "submit->signup#submit"], fn f -> %>
 
 <div class="container scene_element scene_element--fadeinright">
+
+  <fieldset data-target="signup.fieldset">
 
   <div class="field">
     <%= label f, :first_name, class: "label" %>
@@ -57,7 +59,7 @@
   <hr>
 
   <div class="field">
-    <%= submit class: "button is-medium is-primary is-pulled-right" do %>
+    <%= submit class: "button is-medium is-primary is-pulled-right", data: [target: "signup.submit"] do %>
       <span>Next</span>
       <span class="icon is-small">
         <i class="fas fa-chevron-right"></i>
@@ -71,6 +73,9 @@
       <span>Back</span>
     <% end %>
   </div>
+
+  </fieldset>
+
 </div>
 
 <% end %>

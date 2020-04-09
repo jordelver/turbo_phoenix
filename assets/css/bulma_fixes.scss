@@ -1,0 +1,31 @@
+// "Gray out" form inputs when the parent `<fieldset>` has the `readonly` attribute.
+// Bulma supports this natively [1] with the `disabled` attribute but if we disable
+// form elements their values are not submitted to the server which we don't want
+//
+// [1]: https://bulma.io/documentation/form/general/#disabled-form
+//
+fieldset[readonly] {
+  .input {
+    background-color: $input-disabled-background-color;
+    border-color: $input-disabled-border-color;
+    box-shadow: none;
+    color: $input-disabled-color;
+  }
+
+  .select {
+    select {
+      background-color: $input-disabled-background-color;
+      border-color: $input-disabled-border-color;
+      box-shadow: none;
+      color: $input-disabled-color;
+    }
+
+    // FIX "Gray out" the down arrow on dropdowns
+    // It stays as the link colour which feels like a bug to me
+    &:not(.is-multiple):not(.is-loading) {
+      &::after {
+        border-color: #dbdbdb;
+      }
+    }
+  }
+}
