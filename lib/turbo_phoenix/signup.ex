@@ -17,13 +17,13 @@ defmodule TurboPhoenix.Signup do
   #   can also set the action yourself, either directly on the Ecto.Changeset
   #   struct field or by using Ecto.Changeset.apply_action/2."
   #
-  def validate_stage("name" = stage, params) do
+  def validate_stage("name" = _stage, params) do
     %Schema{}
     |> Schema.name_changeset(params)
     |> Ecto.Changeset.apply_action(:update)
   end
 
-  def validate_stage("address" = stage, params) do
+  def validate_stage("address" = _stage, params) do
     %Schema{}
     |> Schema.address_changeset(params)
     |> Ecto.Changeset.apply_action(:update)
