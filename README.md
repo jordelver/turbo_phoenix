@@ -1,4 +1,15 @@
-# TurboPhoenix
+# Turbo Phoenix
+
+A demo/learning application to explore the use of Turbolinks in conjunction with
+Phoenix and Ecto. Turbolinks came from the Rails world, but I've never really
+used it.
+
+I'm also exploring how much CSS animation/transitions can be used in conjunction
+with the speed of Phoenix in creating a smooth user experience.
+
+Ultimately, this work will be compared to Phoenix LiveView in the future.
+
+---
 
 To start your Phoenix server:
 
