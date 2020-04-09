@@ -12,51 +12,53 @@
     <%= csrf_meta_tag() %>
   </head>
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
 
-      <div class="navbar-brand is-vcentered">
-        <a class="navbar-item " href="/">
-          <span class="icon">
-            <i class="fas fa-bolt"></i>
-          </span>
-          <span class="title is-4">Turbo signup</span>
-        </a>
+        <div class="navbar-brand is-vcentered">
+          <a class="navbar-item " href="/">
+            <span class="icon">
+              <i class="fas fa-bolt"></i>
+            </span>
+            <span class="title is-4">Turbo signup</span>
+          </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-      <div class="navbar-menu">
-        <div class="navbar-start"></div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
+        <div class="navbar-menu">
+          <div class="navbar-start"></div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                  Log in
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
-    <main role="main" class="section m-scene">
+      <main role="main" class="section m-scene">
 
-      <%= unless is_nil(get_flash(@conn, :info)) do %>
-        <div class="notification is-info" role="alert"><%= get_flash(@conn, :info) %></div>
-      <% end %>
+        <%= unless is_nil(get_flash(@conn, :info)) do %>
+          <div class="notification is-info" role="alert"><%= get_flash(@conn, :info) %></div>
+        <% end %>
 
-      <%= unless is_nil(get_flash(@conn, :error)) do %>
-        <div class="notification is-danger" role="alert"><%= get_flash(@conn, :error) %></div>
-      <% end %>
+        <%= unless is_nil(get_flash(@conn, :error)) do %>
+          <div class="notification is-danger" role="alert"><%= get_flash(@conn, :error) %></div>
+        <% end %>
 
-      <%= render @view_module, @view_template, assigns %>
-    </main>
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+    </div>
   </body>
 </html>
