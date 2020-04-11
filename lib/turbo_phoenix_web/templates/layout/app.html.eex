@@ -12,9 +12,10 @@
     <%= csrf_meta_tag() %>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-
+    <div class="container m-scene">
+      <nav class="navbar" role="navigation" aria-label="main navigation"
+        data-controller="burger"
+      >
         <div class="navbar-brand is-vcentered">
           <a class="navbar-item " href="/">
             <span class="icon">
@@ -23,11 +24,34 @@
             <span class="title is-4">Turbo signup</span>
           </a>
 
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-action="click->burger#toggle"
+            data-target="burger.button"
+          >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
+        </div>
+
+        <div class="navbar-menu mobile is-hidden-desktop scene_element scene_element--fadeindown"
+          data-target="burger.menu"
+        >
+          <div class="navbar-start">
+            <a class="navbar-item" href="">
+              <span class="icon">
+                <i class="fas fa-check"></i>
+              </span>
+              <span>Signup</span>
+            </a>
+
+            <a class="navbar-item" href="">
+              <span class="icon">
+                <i class="fas fa-lock"></i>
+              </span>
+              <span>Login</span>
+            </a>
+          </div>
         </div>
 
         <div class="navbar-menu">
@@ -47,7 +71,7 @@
         </div>
       </nav>
 
-      <main role="main" class="section m-scene">
+      <main role="main" class="section">
 
         <%= unless is_nil(get_flash(@conn, :info)) do %>
           <div class="notification is-info" role="alert"><%= get_flash(@conn, :info) %></div>

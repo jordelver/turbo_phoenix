@@ -50,3 +50,15 @@ https://bulma.io/documentation/elements/notification/#light-colors
   background-color: #ebfffc;
   color: #00947e;
 }
+
+/* make sure that the mobile navigation menu appears under the top bar */
+.navbar-brand {
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-menu.mobile {
+  position: relative;
+  z-index: 1;
+}
