@@ -27,6 +27,26 @@ main.section {
 
 h1 {
   &.title {
+    position: relative;
     text-shadow: 0 1px 0 darken(#00d1b2, 3%);
+
+    .icon {
+      position: absolute;
+      bottom: .25rem;
+
+      svg {
+        font-size: 1.6rem;
+        margin-right: 4rem;
+      }
+    }
   }
+}
+
+/*
+This is already supported in 0.8.1 so when we upgrade this can be removed
+https://bulma.io/documentation/elements/notification/#light-colors
+*/
+.notification.is-primary.is-light {
+  background-color: #ebfffc;
+  color: #00947e;
 }

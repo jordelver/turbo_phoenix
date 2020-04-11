@@ -28,21 +28,17 @@
 </div>
 
 <div class="container scene_element scene_element--fadeinright">
-  <h1 class="title is-3 has-text-centered has-text-primary">Success!</h1>
+  <h1 class="title is-3 has-text-centered has-text-primary">
+    <span class="icon">
+      <i class="fas fa-check-circle"></i>
+    </span>
+    Success
+  </h1>
 
-  <div class="columns is-mobile is-centered">
-    <div class="column is-three-quarters">
-      <img src="<%= Routes.static_path(@conn, "/images/success.svg") %>" alt="Thanks"/>
-    </div>
+  <div class="notification is-primary is-light has-text-centered">
+    <p>
+      Your signup has been <strong>successful</strong>. You will shortly
+      recieve a confirmation email.
+    </p>
   </div>
-
-  <article class="message is-primary">
-    <div class="message-body">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta
-        nec nulla.
-      </p>
-    </div>
-  </article>
 </div>
