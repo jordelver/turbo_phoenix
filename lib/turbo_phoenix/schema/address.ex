@@ -16,13 +16,13 @@ defmodule TurboPhoenix.Schema.Address do
   def changeset(address, params \\ %{}) do
     address
     |> cast(params, [:address1, :address2, :town, :postcode, :country])
-    |> validate_required([:address1, :address2, :town, :postcode, :country])
+    |> validate_required([:address1, :town, :postcode, :country])
   end
 
   def changeset_with_user(address, user, params \\ %{}) do
     address
     |> cast(params, [:address1, :address2, :town, :postcode, :country])
-    |> validate_required([:address1, :address2, :town, :postcode, :country])
+    |> validate_required([:address1, :town, :postcode, :country])
     |> put_assoc(:user, user)
   end
 end
