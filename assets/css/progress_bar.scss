@@ -1,0 +1,48 @@
+// Override the standard Bulma progress bar height to make it thinner
+.progress {
+  height: 4px;
+}
+
+// Give the progress bar some space
+.progress-bar {
+  position: relative;
+  margin: 1rem 0 2.5rem 0;
+}
+
+.steps {
+  // Position the steps over the top of the progress bar
+  position: absolute;
+  top: -16px;
+  width: 100%;
+
+  // Space out steps evenly
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+// Each step along the progress bar
+.step {
+  // Center the content
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #eee;
+  color: #999;
+  border: 3px solid #fff;
+  font-weight: bold;
+
+  // Make each item a circle
+  border-radius: 9999px;
+  height: 35px;
+  width: 35px;
+
+  // Completed steps
+  &.complete {
+    background-color: #00d1b2;
+    color: #fff;
+  }
+}

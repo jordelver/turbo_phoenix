@@ -1,4 +1,31 @@
-<progress class="progress is-primary" value="25" max="100">25%</progress>
+<div class="progress-bar">
+  <progress class="progress is-primary" value="20" max="100">25%</progress>
+
+  <div class="steps">
+    <ul>
+      <li class="step complete">
+        <span class="icon is-small">
+          <i class="fas fa-user"></i>
+        </span>
+      </li>
+      <li class="step">
+        <span class="icon is-small">
+          <i class="fas fa-map-marker"></i>
+        </span>
+      </li>
+      <li class="step">
+        <span class="icon is-small">
+          <i class="fas fa-question"></i>
+        </span>
+      </li>
+      <li class="step">
+        <span class="icon is-small">
+          <i class="fas fa-check"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <h1 class="title is-4 has-text-centered has-text-primary">Personal details</h1>
 
