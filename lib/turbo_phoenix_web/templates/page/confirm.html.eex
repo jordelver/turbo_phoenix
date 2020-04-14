@@ -29,7 +29,7 @@
 
 <%= form_for @changeset, Routes.page_path(@conn, :validate, :confirm), [novalidate: :novalidate, "data-controller": :signup, "data-action": "submit->signup#submit"], fn _f -> %>
 
-<div class="container scene_element scene_element--fadeinright">
+<div class="container scene_element <%= transition(@conn) %>">
 
   <h1 class="title is-4 has-text-centered has-text-primary">Is everything correct?</h1>
 

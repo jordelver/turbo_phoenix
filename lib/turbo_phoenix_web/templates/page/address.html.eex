@@ -31,7 +31,7 @@
 
 <%= form_for @changeset, Routes.page_path(@conn, :validate, :address), [novalidate: :novalidate, "data-controller": :signup, "data-action": "submit->signup#submit"], fn f -> %>
 
-<div class="container scene_element scene_element--fadeinright">
+<div class="container scene_element <%= transition(@conn) %>">
 
   <fieldset data-target="signup.fieldset">
 
