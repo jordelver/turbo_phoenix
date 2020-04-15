@@ -18,6 +18,9 @@ config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
   render_errors: [view: TurboPhoenixWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: TurboPhoenix.PubSub, adapter: Phoenix.PubSub.PG2]
 
+config :turbo_phoenix, TurboPhoenix.Mailer,
+  adapter: Swoosh.Adapters.Local
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

@@ -1,0 +1,3 @@
+Welcome to Turbo signup, <%= @first_name %>!
+
+Welcome to Turbo signup, <%= @first_name %>.

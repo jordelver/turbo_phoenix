@@ -30,6 +30,23 @@ config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
   ],
   secret_key_base: secret_key_base
 
+mailgun_api_key =
+  System.get_env("MAILGUN_API_KEY") ||
+    raise """
+    environment variable MAILGUN_API_KEY is missing.
+    """
+
+mailgun_domain =
+  System.get_env("MAILGUN_DOMAIN") ||
+    raise """
+    environment variable MAILGUN_DOMAIN is missing.
+    """
+
+config :turbo_phoenix, TurboPhoenix.Mailer,
+  adapter: Swoosh.Adapters.Mailgun,
+  api_key: mailgun_api_key,
+  domain: mailgun_domain
+
 # ## Using releases (Elixir v1.9+)
 #
 # If you are doing OTP releases, you need to instruct Phoenix

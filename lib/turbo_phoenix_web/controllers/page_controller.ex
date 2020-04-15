@@ -28,12 +28,12 @@ defmodule TurboPhoenixWeb.PageController do
 
   def validate(conn, %{"stage" => "confirm" = stage}) do
     case Signup.create_signup(saved_progress_or_new(conn)) do
-      {:ok, %{user: _user, address: _address}} ->
+      {:ok, _} ->
         conn
         |> clear_session
         |> redirect_to_next_stage(stage)
 
-      {:error, _failed_operation, _failed_value, _changes_so_far} ->
+      {:error, _} ->
         conn
         |> put_flash(:signup_error, "Error signing up")
         |> redirect(to: Routes.page_path(conn, :stage, :confirm))

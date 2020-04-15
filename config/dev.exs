@@ -65,6 +65,12 @@ config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
     ]
   ]
 
+# run the Swoosh preview server
+config :swoosh, serve_mailbox: true
+
+# change the preview server port (4000 by default)
+config :swoosh, serve_mailbox: true, preview_port: 4001
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 

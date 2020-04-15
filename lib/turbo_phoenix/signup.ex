@@ -1,4 +1,6 @@
 defmodule TurboPhoenix.Signup do
+  alias TurboPhoenix.Mailer
+  alias TurboPhoenix.Mailers
   alias TurboPhoenix.Repo
   alias TurboPhoenix.Schema.{Address, User}
   alias TurboPhoenix.Schema.Signup, as: Schema
@@ -32,13 +34,23 @@ defmodule TurboPhoenix.Signup do
   def create_signup(params) do
     Ecto.Multi.new()
     |> Ecto.Multi.insert(:user, User.changeset(%User{}, params))
-
-    # We use `run/3` because we need access to the user
-    # created in the previous insert operation
     |> Ecto.Multi.run(:address, fn _repo, %{user: user} ->
       Address.changeset_with_user(%Address{}, user, params)
       |> Repo.insert()
     end)
     |> Repo.transaction()
+    |> case do
+      {:ok, %{user: user, address: _address}} ->
+        send_welcome_email(user)
+        {:ok, :signup_created}
+
+      {:error, _action, _changeset, _changes_so_far} ->
+        {:error, :signup_failed}
+    end
+  end
+
+  defp send_welcome_email(user) do
+    Mailers.User.welcome(user)
+    |> Mailer.deliver!
   end
 end

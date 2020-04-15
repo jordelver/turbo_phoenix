@@ -1,0 +1,7 @@
+<div>
+  <h1>Welcome to Turbo signup, <%= @first_name %>!</h1>
+</div>
+
+<p>
+  Welcome to Turbo signup, <%= @first_name %>.
+</p>
