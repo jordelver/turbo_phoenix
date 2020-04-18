@@ -34,14 +34,14 @@
   <h1 class="title is-4 has-text-centered has-text-primary">Is everything correct?</h1>
 
   <%= unless is_nil(get_flash(@conn, :signup_error)) do %>
-    <article class="message is-danger">
-      <div class="message-body">
-        <span class="icon has-text-danger">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
+    <div class="notification is-danger signup-error">
+      <span class="icon is-large">
+        <i class="fas fa-exclamation-triangle"></i>
+      </span>
+      <span class="error">
         <%= get_flash(@conn, :signup_error) %>
-      </div>
-    </article>
+      </span>
+    </div>
   <% end %>
 
   <table class="table is-fullwidth">

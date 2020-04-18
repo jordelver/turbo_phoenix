@@ -87,3 +87,32 @@ https://bulma.io/documentation/elements/notification/#light-colors
     }
   }
 }
+
+.notification.is-danger.signup-error {
+  text-align: center;
+  font-size: 1.2rem;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+  display: flex;
+  justify-content: center;
+  padding: .5rem 2.5rem .5rem 2.5rem;
+
+  .icon {
+    display: flex;
+    margin-left: -2rem;
+
+    svg {
+      font-size: 1.6rem;
+    }
+  }
+
+  .error {
+    display: flex;
+    height: 3rem;
+    padding-top: .7rem;
+    text-shadow: -1px -1px 0 #d8032c;
+  }
+}
