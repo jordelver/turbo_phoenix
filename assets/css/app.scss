@@ -22,7 +22,7 @@ hr {
 
 /* Remove space between navbar and top of the content */
 main.section {
-  padding-top: 1rem;
+  padding-top: 1.6rem;
 }
 
 h1 {
@@ -51,14 +51,39 @@ https://bulma.io/documentation/elements/notification/#light-colors
   color: #00947e;
 }
 
-/* make sure that the mobile navigation menu appears under the top bar */
-.navbar-brand {
-  background-color: #fff;
-  position: relative;
-  z-index: 2;
-}
-
 .navbar-menu.mobile {
-  position: relative;
-  z-index: 1;
+  box-shadow: inset 0 -7px 9px -7px rgba(0, 0, 0, 0.1);
+  margin-top: -1rem;
+
+  // Bulma sets this to `display: none` by default, but this breaks all
+  // animations, for reasons, I'm sure. To fix that, we set `block` explicitly
+  // here.
+  display: block;
+  overflow: hidden;
+  transition: all 0.2s ease-out;
+
+  // We can't animate `height` so we set `height: auto` and animate `max-height`
+  height: auto;
+  max-height: 0;
+
+  // Hide the actual navbar until it is animated in or else you can focus the
+  // links using the keyboard, which looks broken
+  .navbar-start {
+    transition: visibility 0.2s ease-out;
+    visibility: hidden;
+  }
+
+  &.is-active {
+    // Set to the height of the content so that the transition is triggered
+    //
+    // It's possible to set this to a very large number to accommodate even the
+    // longest content, but that unfortunately affects the animation speed,
+    // making it slower on the way up than the way down.
+    max-height: 14vh;
+
+    // Show the navbar links once the menu is active
+    .navbar-start {
+      visibility: visible;
+    }
+  }
 }

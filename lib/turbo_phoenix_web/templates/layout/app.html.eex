@@ -34,7 +34,7 @@
           </a>
         </div>
 
-        <div class="navbar-menu mobile is-hidden-desktop scene_element scene_element--fadeindown"
+        <div class="navbar-menu mobile is-hidden-desktop"
           data-target="burger.menu"
         >
           <div class="navbar-start">
