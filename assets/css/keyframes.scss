@@ -1,5 +1,6 @@
 // Keyframes
 
+// Page transition moving through the wizard, page-to-page
 @keyframes fade-in-right {
   0% {
     opacity: 0;
@@ -12,6 +13,7 @@
   }
 }
 
+// Signup error messages
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
