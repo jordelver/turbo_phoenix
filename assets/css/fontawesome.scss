@@ -1,5 +1,5 @@
-/* Hide body until fontawesome icons have been reloaded */
-/* This stops a page flash whilst the icons are loading */
+// Hide body until fontawesome icons have been reloaded
+// This stops a page flash whilst the icons are loading
 .fontawesome-i2svg-pending body {
   display: none;
 }

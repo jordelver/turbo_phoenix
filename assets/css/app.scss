@@ -1,4 +1,4 @@
-/* This file is for your main application css. */
+// This file is for your main application css
 @charset "utf-8";
 
 @import "keyframes";
@@ -15,12 +15,12 @@
   background: $teal;
 }
 
-/* Hide the `<hr>` elements separating buttons from content */
+// Hide the `<hr>` elements separating buttons from content
 hr {
   background-color: transparent;
 }
 
-/* Remove space between navbar and top of the content */
+// Remove space between navbar and top of the content
 main.section {
   padding-top: 1.6rem;
 }
@@ -42,10 +42,8 @@ h1 {
   }
 }
 
-/*
-This is already supported in 0.8.1 so when we upgrade this can be removed
-https://bulma.io/documentation/elements/notification/#light-colors
-*/
+// This is already supported in 0.8.1 so when we upgrade this can be removed
+// https://bulma.io/documentation/elements/notification/#light-colors
 .notification.is-primary.is-light {
   background-color: #ebfffc;
   color: #00947e;

@@ -1,16 +1,14 @@
-/*
- * CSS Page Transitions
- * Don't forget to add vendor prefixes!
- */
+// CSS Page Transitions
+// Don't forget to add vendor prefixes!
 
-/** Basic styles for an animated element */
+// Basic styles for an animated element
 .m-scene .scene_element {
   animation-duration: 0.25s;
   transition-timing-function: ease-in;
   animation-fill-mode: both;
 }
 
-/** An element that fades in and slides from the right */
+// An element that fades in and slides from the right
 .m-scene .scene_element--fadeinright {
   animation-name: fadeInRight;
 }
