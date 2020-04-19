@@ -12,7 +12,7 @@
     <%= csrf_meta_tag() %>
   </head>
   <body>
-    <div class="container m-scene">
+    <div class="container">
       <nav class="navbar" role="navigation" aria-label="main navigation"
         data-controller="burger"
       >

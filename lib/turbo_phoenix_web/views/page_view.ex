@@ -1,7 +1,7 @@
 defmodule TurboPhoenixWeb.PageView do
   use TurboPhoenixWeb, :view
 
-  @fade_in_class "scene_element--fadeinright"
+  @fade_in_class "fade-in-right"
 
   @doc """
   Returns the correct CSS class for page transitions
