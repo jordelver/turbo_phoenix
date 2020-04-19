@@ -1,8 +1,6 @@
 defmodule TurboPhoenixWeb.Router do
   use TurboPhoenixWeb, :router
 
-  alias TurboPhoenixWeb.RandomSleep
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
