@@ -25,7 +25,7 @@ defmodule TurboPhoenixWeb.Router do
   if Mix.env() == :dev do
     scope "/", TurboPhoenixWeb do
       pipe_through :browser
-      live_dashboard "/dashboard"
+      live_dashboard "/dashboard", metrics: TurboPhoenixWeb.Telemetry
     end
   end
 

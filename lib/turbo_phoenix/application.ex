@@ -12,6 +12,8 @@ defmodule TurboPhoenix.Application do
       TurboPhoenix.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: TurboPhoenix.PubSub},
+      # Start Telemetry
+      TurboPhoenixWeb.Telemetry,
       # Start the endpoint when the application starts
       TurboPhoenixWeb.Endpoint
       # Starts a worker by calling: TurboPhoenix.Worker.start_link(arg)
