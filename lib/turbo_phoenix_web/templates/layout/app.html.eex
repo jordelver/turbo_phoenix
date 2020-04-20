@@ -7,7 +7,6 @@
     <meta name="turbolinks-cache-control" content="no-preview">
     <title>Turbo signup</title>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <%= csrf_meta_tag() %>
   </head>
@@ -19,7 +18,13 @@
         <div class="navbar-brand is-vcentered">
           <a class="navbar-item " href="/">
             <span class="icon">
-              <i class="fas fa-bolt"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+                aria-hidden="true" role="img">
+                <path fill="currentColor" d="M296 160H180.6l42.6-129.8C227.2 15
+                  215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5
+                  288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0
+                  16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"/>
+              </svg>
             </span>
             <span class="title is-4">Turbo signup</span>
           </a>
@@ -40,14 +45,29 @@
           <div class="navbar-start">
             <a class="navbar-item" href="">
               <span class="icon">
-                <i class="fas fa-check"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                  aria-hidden="true" role="img">
+                  <path fill="currentColor" d="M173.898
+                    439.404l-166.4-166.4c-9.997-9.997-9.997-26.206
+                    0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192
+                    312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204
+                    0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4
+                    294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                </svg>
               </span>
               <span>Signup</span>
             </a>
 
             <a class="navbar-item" href="">
               <span class="icon">
-                <i class="fas fa-lock"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                  aria-hidden="true" role="img">
+                  <path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8
+                    0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0
+                    26.5 21.5 48 48 48h352c26.5 0 48-21.5
+                    48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7
+                    32.3-72 72-72s72 32.3 72 72v72z"/>
+                </svg>
               </span>
               <span>Login</span>
             </a>

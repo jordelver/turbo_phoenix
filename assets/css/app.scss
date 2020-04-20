@@ -4,7 +4,6 @@
 @import "keyframes";
 @import "transitions";
 @import "turbolinks";
-@import "fontawesome";
 @import "variables";
 @import "bulma";
 @import "bulma_fixes";
@@ -40,6 +39,19 @@ h1 {
       }
     }
   }
+}
+
+// Style Bulma icons
+// These styles are from Font Awesome, but this allows us to inline all our
+// SVGs and 1) not have to rely on JavaScript, 2) reduce our HTTP requests
+// by 1, and 3) reduce our total download size
+.icon svg {
+  width: 1em;
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -.125em;
 }
 
 // This is already supported in 0.8.1 so when we upgrade this can be removed

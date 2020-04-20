@@ -5,22 +5,56 @@
     <ul>
       <li class="step complete">
         <span class="icon is-small">
-          <i class="fas fa-user"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+            aria-hidden="true" role="img">
+            <path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7
+              0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2
+              10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0
+              422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5
+              48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/>
+          </svg>
         </span>
       </li>
       <li class="step complete">
         <span class="icon is-small">
-          <i class="fas fa-map-marker"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+            aria-hidden="true" role="img">
+            <path fill="currentColor" d="M172.268 501.67C26.97 291.031 0
+              269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0
+              77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464
+              0z"/>
+          </svg>
         </span>
       </li>
       <li class="step complete">
         <span class="icon is-small">
-          <i class="fas fa-question"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+            aria-hidden="true" role="img">
+            <path fill="currentColor" d="M202.021 0C122.202 0 70.503 32.703
+              29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138
+              32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381
+              43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0
+              22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299
+              44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0
+              24-10.745 24-24v-5.773c0-42.86 125.268-44.645
+              125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192
+              373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27
+              69.271 69.27s69.271-31.075
+              69.271-69.271-31.075-69.27-69.271-69.27z"/>
+          </svg>
         </span>
       </li>
       <li class="step">
         <span class="icon is-small">
-          <i class="fas fa-check"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+            aria-hidden="true" role="img">
+            <path fill="currentColor" d="M173.898
+              439.404l-166.4-166.4c-9.997-9.997-9.997-26.206
+              0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69
+              432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203
+              36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998
+              9.997-26.207 9.997-36.204-.001z"/>
+          </svg>
         </span>
       </li>
     </ul>
@@ -91,13 +125,28 @@
     <%= submit class: "button is-medium is-primary is-pulled-right" do %>
       <span>Signup</span>
       <span class="icon is-small">
-        <i class="fas fa-check"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+          aria-hidden="true" role="img">
+          <path fill="currentColor" d="M173.898
+            439.404l-166.4-166.4c-9.997-9.997-9.997-26.206
+            0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69
+            432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203
+            36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998
+            9.997-26.207 9.997-36.204-.001z"/>
+        </svg>
       </span>
     <% end %>
 
     <%= link class: "button is-medium is-outlined", to: Routes.page_path(@conn, :stage, :address) do %>
       <span class="icon is-small">
-        <i class="fas fa-chevron-left"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+          aria-hidden="true" role="img">
+          <path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37
+            24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49
+            256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37
+            9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57
+            0-33.94z"/>
+        </svg>
       </span>
       <span>Back</span>
     <% end %>
