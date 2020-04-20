@@ -16,7 +16,8 @@ config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "nZaWnN6w8+NKoQl7hDyCkcajpHZwWs0vOyXy4k36I9xAAG8YzqVPG82VNPxtM1Nr",
   render_errors: [view: TurboPhoenixWeb.ErrorView, accepts: ~w(html json)],
-  pubsub_server: TurboPhoenix.PubSub
+  pubsub_server: TurboPhoenix.PubSub,
+  live_view: [signing_salt: "I8+T7vIpAbuVDbMCheC/i2+s8krfodgb"]
 
 config :turbo_phoenix, TurboPhoenix.Mailer,
   adapter: Swoosh.Adapters.Local

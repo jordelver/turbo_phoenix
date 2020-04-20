@@ -1,5 +1,6 @@
 defmodule TurboPhoenixWeb.Router do
   use TurboPhoenixWeb, :router
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -19,6 +20,13 @@ defmodule TurboPhoenixWeb.Router do
     get "/", PageController, :index
     get "/signup/:stage", PageController, :stage
     post "/signup/:stage", PageController, :validate
+  end
+
+  if Mix.env() == :dev do
+    scope "/", TurboPhoenixWeb do
+      pipe_through :browser
+      live_dashboard "/dashboard"
+    end
   end
 
   # Other scopes may use custom stacks.

@@ -36,6 +36,7 @@ defmodule TurboPhoenix.MixProject do
       {:phoenix, "~> 1.5.0-rc.0", override: true},
       {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_ecto, "~> 4.0"},
+      {:phoenix_live_dashboard, "~> 0.1"},
       {:ecto_sql, "~> 3.1"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
