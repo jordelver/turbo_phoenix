@@ -10,6 +10,8 @@ defmodule TurboPhoenix.Application do
     children = [
       # Start the Ecto repository
       TurboPhoenix.Repo,
+      # Start the PubSub system
+      {Phoenix.PubSub, name: TurboPhoenix.PubSub},
       # Start the endpoint when the application starts
       TurboPhoenixWeb.Endpoint
       # Starts a worker by calling: TurboPhoenix.Worker.start_link(arg)

@@ -101,7 +101,7 @@
           <div class="notification is-danger" role="alert"><%= get_flash(@conn, :error) %></div>
         <% end %>
 
-        <%= render @view_module, @view_template, assigns %>
+        <%= @inner_content %>
       </main>
     </div>
   </body>
