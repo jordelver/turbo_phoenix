@@ -19,8 +19,7 @@ config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
   pubsub_server: TurboPhoenix.PubSub,
   live_view: [signing_salt: "I8+T7vIpAbuVDbMCheC/i2+s8krfodgb"]
 
-config :turbo_phoenix, TurboPhoenix.Mailer,
-  adapter: Swoosh.Adapters.Local
+config :turbo_phoenix, TurboPhoenix.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configures Elixir's Logger
 config :logger, :console,

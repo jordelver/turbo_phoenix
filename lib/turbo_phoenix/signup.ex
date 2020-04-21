@@ -51,6 +51,6 @@ defmodule TurboPhoenix.Signup do
 
   defp send_welcome_email(user) do
     Mailers.User.welcome(user)
-    |> Mailer.deliver!
+    |> Mailer.deliver!()
   end
 end
