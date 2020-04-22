@@ -4,7 +4,6 @@ defmodule TurboPhoenixWeb.PageViewTest do
   import TurboPhoenixWeb.PageView
 
   describe "completed_stages/1" do
-
     test "name stage" do
       assert completed_stages(:name) == [:name]
     end
@@ -23,7 +22,6 @@ defmodule TurboPhoenixWeb.PageViewTest do
   end
 
   describe "stage_complete?/2" do
-
     test "name stage" do
       assert stage_complete?(:name, "/signup/name") == "complete"
       assert stage_complete?(:name, "/signup/address") == "complete"
