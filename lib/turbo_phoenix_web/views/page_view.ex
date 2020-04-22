@@ -1,6 +1,8 @@
 defmodule TurboPhoenixWeb.PageView do
   use TurboPhoenixWeb, :view
 
+  @stages [:name, :address, :confirm, :thanks]
+
   @fade_in_class "fade-in-right"
 
   @doc """
@@ -34,30 +36,45 @@ defmodule TurboPhoenixWeb.PageView do
   def percentage_complete(%{request_path: "/signup/thanks"}), do: "100%"
 
   @doc """
-  Outputs the CSS class "complete" if the step is complete
+  Outputs the CSS class "complete" if the stage is complete
+
+  ## Examples
+
+      iex> stage_complete?(:name, %Plug.Conn{request_path: "/signup/address"})
+      "complete"
+
+      iex> stage_complete?(:thanks, %Plug.Conn{request_path: "/signup/name"})
+      nil
+
   """
-  def step_complete?(step, %Plug.Conn{request_path: path}), do: complete?(step, path)
+  def stage_complete?(stage, %Plug.Conn{request_path: request_path}) do
+    stage_complete?(stage, request_path)
+  end
 
-  # name step
-  def step_complete?(:name, "/signup/name"), do: "complete"
-  def step_complete?(:name, "/signup/address"), do: "complete"
-  def step_complete?(:name, "/signup/address"), do: "complete"
-  def step_complete?(:name, "/signup/confirm"), do: "complete"
-  def step_complete?(:name, "/signup/thanks"), do: "complete"
+  def stage_complete?(stage, request_path) do
+    current_stage =
+      Path.split(request_path)
+      |> List.last()
+      |> String.to_existing_atom()
 
-  # address step
-  def step_complete?(:address, "/signup/address"), do: "complete"
-  def step_complete?(:address, "/signup/address"), do: "complete"
-  def step_complete?(:address, "/signup/confirm"), do: "complete"
-  def step_complete?(:address, "/signup/thanks"), do: "complete"
+    if stage in completed_stages(current_stage), do: "complete"
+  end
 
-  # confirm step
-  def step_complete?(:confirm, "/signup/confirm"), do: "complete"
-  def step_complete?(:confirm, "/signup/thanks"), do: "complete"
+  @doc """
+  Returns all the stages that have been completed _before_ and _including_ the
+  given `stage` according to the stages listed in `@stages`.
 
-  # thanks step
-  def step_complete?(:thanks, "/signup/thanks"), do: "complete"
+  ## Examples
 
-  # step not complete
-  def step_complete?(_step, _path), do: nil
+      iex> completed_stages(:thanks)
+      [:name, :address, :confirm, :thanks]
+
+      iex> completed_stages(:address)
+      [:name, :address]
+
+  """
+  def completed_stages(current_stage) do
+    Enum.take_while(@stages, fn completed_stage -> completed_stage != current_stage end)
+    |> Enum.concat([current_stage])
+  end
 end
