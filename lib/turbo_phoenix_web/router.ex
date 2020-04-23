@@ -14,6 +14,13 @@ defmodule TurboPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :admins_only do
+    # if basic auth credentials are present turn it on
+    if System.get_env("HTTP_BASIC_AUTH_USERNAME") || System.get_env("HTTP_BASIC_AUTH_PASSWORD") do
+      plug BasicAuth, use_config: {:turbo_phoenix_web, :basic_auth}
+    end
+  end
+
   scope "/", TurboPhoenixWeb do
     pipe_through :browser
 
@@ -22,11 +29,9 @@ defmodule TurboPhoenixWeb.Router do
     post "/signup/:stage", PageController, :validate
   end
 
-  if Mix.env() == :dev do
-    scope "/", TurboPhoenixWeb do
-      pipe_through :browser
-      live_dashboard "/dashboard", metrics: TurboPhoenixWeb.Telemetry
-    end
+  scope "/", TurboPhoenixWeb do
+    pipe_through [:browser, :admins_only]
+    live_dashboard "/dashboard", metrics: TurboPhoenixWeb.Telemetry
   end
 
   # Other scopes may use custom stacks.

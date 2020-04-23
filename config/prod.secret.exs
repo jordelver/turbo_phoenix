@@ -30,6 +30,24 @@ config :turbo_phoenix, TurboPhoenixWeb.Endpoint,
   ],
   secret_key_base: secret_key_base
 
+http_basic_auth_username =
+  System.get_env("HTTP_BASIC_AUTH_USERNAME") ||
+    raise """
+    environment variable HTTP_BASIC_AUTH_USERNAME is missing.
+    """
+
+http_basic_auth_password =
+  System.get_env("HTTP_BASIC_AUTH_PASSWORD") ||
+    raise """
+    environment variable HTTP_BASIC_AUTH_PASSWORD is missing.
+    """
+
+# Set basic auth from environment variables
+config :turbo_phoenix_web, basic_auth: [
+  username: http_basic_auth_username,
+  password: http_basic_auth_password,
+]
+
 mailgun_api_key =
   System.get_env("MAILGUN_API_KEY") ||
     raise """
